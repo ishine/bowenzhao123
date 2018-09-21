@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<content>
+
+<intent>
+
+	<intentName>天气</intentName>
+
+	<slot name='location' description='地点'>
+
+		<compulsory>False</compulsory>
+
+		<defaultValue>深圳</defaultValue>
+
+		<receiveEntityType>LOCATION</receiveEntityType>
+                
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>	
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您想查哪里的天气呢？</clarification>
+
+	</slot>
+
+	<slot name='Date' description='日期'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>DATE</receiveEntityType>
+                
+        <Interface>getCurrentTime</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>	
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您想查什么时候的天气呢？</clarification>
+
+	</slot>
+
+	<intentCommandExecute>
+		<type>script</type>
+		<textValue>天气很好</textValue>
+		<scriptValue>tianqi</scriptValue>
+	</intentCommandExecute>
+
+	
+</intent>
+
+
+<intent>
+
+	<intentName>股票</intentName>
+
+	<slot name='organization' description='股票'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>ORGANIZATION</receiveEntityType>
+                
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>	
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您想哪支股票呢？</clarification>
+
+	</slot>
+
+	<slot name='Date' description='日期'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>DATE</receiveEntityType>
+                
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>	
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您想查什么时候的价格呢？</clarification>
+
+	</slot>
+
+	<intentCommandExecute>
+		<type>text</type>
+		<textValue>股票大涨</textValue>
+		<scriptValue>None</scriptValue>
+	</intentCommandExecute>
+	
+	
+</intent>
+
+<intent>
+
+	<intentName>机票</intentName>
+
+	<slot name='fromLoc' description='出发地'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>LOCATION</receiveEntityType>
+                
+                <Interface>getCurrentLoc</Interface>
+
+		<preContext>从</preContext>
+
+		<sufContext>None</sufContext>	
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您想从哪里出发呢？</clarification>
+
+	</slot>
+
+	<slot name='toLoc' description='到达地'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>LOCATION</receiveEntityType>
+                
+                <Interface>None</Interface>
+
+		<preContext>到达,去,到</preContext>
+
+		<sufContext>None</sufContext>	
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您想买去哪里的机票呢？</clarification>
+
+	</slot>
+
+	<slot name='Date' description='日期'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>DATE</receiveEntityType>
+                
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>	
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您想什么时候出发呢？</clarification>
+
+	</slot>
+
+
+	<intentCommandExecute>
+		<type>text</type>
+		<textValue>已订好机票</textValue>
+		<scriptValue>None</scriptValue>
+	</intentCommandExecute>
+
+	
+</intent>
+
+<intent>
+
+	<intentName>取钱</intentName>
+
+	<slot name='withdrawNumber' description='取款金额'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>NUMEX</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>您的取款金额是多少呢？</clarification>
+
+	</slot>
+
+	<slot name='withdrawType' description='取款类型'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>CARDTYPE</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您准备用银行卡还是存折进行取款呢？</clarification>
+
+	</slot>
+
+	<intentCommandExecute>
+		<type>script</type>
+		<textValue>恭喜发财</textValue>
+		<scriptValue>withdraw</scriptValue>
+	</intentCommandExecute>
+
+
+</intent>
+
+<intent>
+
+	<intentName>转账</intentName>
+
+	<slot name='transferNumber' description='转账金额'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>NUMEX</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>您的转账金额是多少呢？</clarification>
+
+	</slot>
+
+	<slot name='whichBank' description='被转账户所在行'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>ACCOUNTBANK</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您是要往本行账户还是他行账户上转账？</clarification>
+
+	</slot>
+	<slot name='monetaryfrom' description='货币形式'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>MONETARYFORM</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您是现金转帐还是银行卡转帐?</clarification>
+
+	</slot>
+
+	<intentCommandExecute>
+		<type>script</type>
+		<textValue>我钱多,随便转</textValue>
+		<scriptValue>transformoney</scriptValue>
+	</intentCommandExecute>
+
+
+</intent>
+<intent>
+
+	<intentName>汇率</intentName>
+
+	<slot name='currencyType' description='币种'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>CURRENCYTYPE</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>您想要查询哪个货币的汇率呢？</clarification>
+
+	</slot>
+	<intentCommandExecute>
+		<type>script</type>
+		<textValue>人民币升值了</textValue>
+		<scriptValue>ExchangeRateInquiry</scriptValue>
+	</intentCommandExecute>
+</intent>
+
+<intent>
+
+	<intentName>提取外币</intentName>
+
+	<slot name='currencyType' description='币种'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>CURRENCYTYPE</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>您想要换取什么外币呢？</clarification>
+
+	</slot>
+	<slot name='currencyNumber' description='金额'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>NUMEX</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您将用多少人民币进行购汇？</clarification>
+
+	</slot>
+	<slot name='appointment' description='是否预约'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>APPOINTMENT</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您已预约业务还是未预约？</clarification>
+
+	</slot>
+	<slot name='accountOwnerShip' description='账户所属地'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>ACCOUNTOWNERSHIP</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您将取汇的银行卡是本地账户还是外地账户？</clarification>
+
+	</slot>
+	<intentCommandExecute>
+		<type>script</type>
+		<textValue>提取外汇中</textValue>
+		<scriptValue>currencyTake</scriptValue>
+	</intentCommandExecute>
+</intent>
+
+<intent>
+
+	<intentName>办理信用卡</intentName>
+
+	<slot name='creditCardType' description='信用卡类型'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>CREDITCARDTYPE</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请选择1种业务进行办理：新用户办卡、已有主卡加办主卡、申办附属卡、申请白金卡或金卡</clarification>
+
+	</slot>
+	<slot name='creditCardMode' description='办卡方式'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>CREDITCARDMODE</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您想通过自助办理还是前往柜台办理？</clarification>
+
+	</slot>
+
+	<intentCommandExecute>
+		<type>script</type>
+		<textValue>信用卡办理中</textValue>
+		<scriptValue>creditCardApply</scriptValue>
+	</intentCommandExecute>
+</intent>
+
+<intent>
+
+	<intentName>信用卡还款</intentName>
+
+	<slot name='creditCardPaymentType' description='还款类型'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>CREDITCARDPAYMENTTYPE</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>您想要了解哪种还款方式呢？目前有4种可还款方式：自动还款、自助存款、手机银行还款、便利店还款</clarification>
+
+	</slot>
+	<intentCommandExecute>
+		<type>script</type>
+		<textValue>还款中</textValue>
+		<scriptValue>creditCardPayment</scriptValue>
+	</intentCommandExecute>
+</intent>
+
+<intent>
+
+	<intentName>注销银行卡</intentName>
+	<slot name='isCardArrears' description='是否欠费'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>CARDARREARSSTATUS</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>请问您的信用卡处于欠费还是未欠费状态？</clarification>
+
+	</slot>
+	<intentCommandExecute>
+		<type>script</type>
+		<textValue>注销中</textValue>
+		<scriptValue>closeCreditCard</scriptValue>
+	</intentCommandExecute>
+</intent>
+
+<intent>
+
+	<intentName>查询信用卡</intentName>
+	<slot name='creditCardPaymentInquiryType' description='信用账单查询途径'>
+
+		<compulsory>True</compulsory>
+
+		<defaultValue>None</defaultValue>
+
+		<receiveEntityType>CREDITCARDPAYMENTINQUIRYTYPE</receiveEntityType>
+
+                <Interface>None</Interface>
+
+		<preContext>None</preContext>
+
+		<sufContext>None</sufContext>
+
+		<dependentSlot>None</dependentSlot>
+
+		<clarification>以下4种查询途径，请选择1种了解：微信查询、网上银行查询、短信查询、电话查询</clarification>
+
+	</slot>
+	<intentCommandExecute>
+		<type>script</type>
+		<textValue>查询中</textValue>
+		<scriptValue>creditCardPaymentInquiry</scriptValue>
+	</intentCommandExecute>
+</intent>
+</content>

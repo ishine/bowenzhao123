@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<content>
+	<template>我的手机号是(PHONE)</template>
+	<template>我的名字叫(PERSON)</template>
+	<template>我叫(PERSON)</template>
+	<template>我想订一张到(LOCATION)的机票</template>
+	<template>我想订一张从(LOCATION)到(LOCATION)的机票</template>
+	<template>查询(ORGANIZATION)的股票</template>
+</content>
+
+
+
+
+
+
+
+
+
+

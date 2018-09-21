@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mapping>
+
+<namedEntity name='NUMEX'>
+<n>PERCENT</n><n>MONEY</n><n>FREQUENCY</n><n>INTEGER</n><n>FRACTION</n><n>DECIMAL</n><n>ORDINAL</n><n>RATE</n><n>PHONE</n>
+</namedEntity>
+</mapping>
